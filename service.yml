@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
-  labels:
-    app: nginx-prod-service
+    name: gamutkart-service
+    labels:
+      app: gamutkart-app
 spec:
   selector:
-     app: nginx-pod
+    app: gamutkart-app
   type: NodePort
   ports:
-   - nodePort: 31000
-     port: 80
-     targetPort: 80
-
+  - nodePort: 31000
+    port: 8080
+    targetPort: 8080

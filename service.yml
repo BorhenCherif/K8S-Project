@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx-prod-service
+spec:
+  selector:
+     app: nginx-pod
+  type: NodePort
+  ports:
+   - nodePort: 31000
+     port: 80
+     targetPort: 80
+
